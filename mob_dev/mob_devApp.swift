@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct mob_devApp: App {
+    var network = Network()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(network)
         }
     }
 }

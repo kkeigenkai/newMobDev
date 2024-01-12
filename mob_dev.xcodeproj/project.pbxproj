@@ -11,6 +11,11 @@
 		0F1ACA072B49E7D600B0CF3C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1ACA062B49E7D600B0CF3C /* ContentView.swift */; };
 		0F1ACA092B49E7D700B0CF3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F1ACA082B49E7D700B0CF3C /* Assets.xcassets */; };
 		0F1ACA0C2B49E7D700B0CF3C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F1ACA0B2B49E7D700B0CF3C /* Preview Assets.xcassets */; };
+		0F1ACA172B49EFF800B0CF3C /* PictureOfTheDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1ACA162B49EFF800B0CF3C /* PictureOfTheDay.swift */; };
+		0F1ACA192B49F08100B0CF3C /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1ACA182B49F08100B0CF3C /* Network.swift */; };
+		0F99D99C2B4DF57700140057 /* PictureOfTheDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F99D99B2B4DF57700140057 /* PictureOfTheDayView.swift */; };
+		0F99D99E2B4DF6E600140057 /* NasaSearchVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F99D99D2B4DF6E600140057 /* NasaSearchVeiw.swift */; };
+		0F99D9A02B4DFE2C00140057 /* NasaSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F99D99F2B4DFE2C00140057 /* NasaSearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,11 @@
 		0F1ACA062B49E7D600B0CF3C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0F1ACA082B49E7D700B0CF3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F1ACA0B2B49E7D700B0CF3C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0F1ACA162B49EFF800B0CF3C /* PictureOfTheDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureOfTheDay.swift; sourceTree = "<group>"; };
+		0F1ACA182B49F08100B0CF3C /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		0F99D99B2B4DF57700140057 /* PictureOfTheDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureOfTheDayView.swift; sourceTree = "<group>"; };
+		0F99D99D2B4DF6E600140057 /* NasaSearchVeiw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaSearchVeiw.swift; sourceTree = "<group>"; };
+		0F99D99F2B4DFE2C00140057 /* NasaSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaSearch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +61,15 @@
 		0F1ACA032B49E7D600B0CF3C /* mob_dev */ = {
 			isa = PBXGroup;
 			children = (
+				0F1ACA182B49F08100B0CF3C /* Network.swift */,
 				0F1ACA042B49E7D600B0CF3C /* mob_devApp.swift */,
 				0F1ACA062B49E7D600B0CF3C /* ContentView.swift */,
 				0F1ACA082B49E7D700B0CF3C /* Assets.xcassets */,
 				0F1ACA0A2B49E7D700B0CF3C /* Preview Content */,
+				0F1ACA162B49EFF800B0CF3C /* PictureOfTheDay.swift */,
+				0F99D99B2B4DF57700140057 /* PictureOfTheDayView.swift */,
+				0F99D99D2B4DF6E600140057 /* NasaSearchVeiw.swift */,
+				0F99D99F2B4DFE2C00140057 /* NasaSearch.swift */,
 			);
 			path = mob_dev;
 			sourceTree = "<group>";
@@ -138,7 +153,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F1ACA072B49E7D600B0CF3C /* ContentView.swift in Sources */,
+				0F99D9A02B4DFE2C00140057 /* NasaSearch.swift in Sources */,
 				0F1ACA052B49E7D600B0CF3C /* mob_devApp.swift in Sources */,
+				0F1ACA192B49F08100B0CF3C /* Network.swift in Sources */,
+				0F1ACA172B49EFF800B0CF3C /* PictureOfTheDay.swift in Sources */,
+				0F99D99C2B4DF57700140057 /* PictureOfTheDayView.swift in Sources */,
+				0F99D99E2B4DF6E600140057 /* NasaSearchVeiw.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +299,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,6 +328,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
