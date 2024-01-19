@@ -34,16 +34,13 @@ struct ContentView: View {
 }
 
 struct YoutubeVideoView: UIViewRepresentable {
-    
     var url: String
     
     func makeUIView(context: Context) -> WKWebView  {
-        
         WKWebView()
     }
     
     func updateUIView(_ uiView: WKWebView, context: Context) {
-        
         let path = url
         guard let url = URL(string: path) else { return }
         

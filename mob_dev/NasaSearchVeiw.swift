@@ -20,7 +20,9 @@ struct NasaSearchVeiw: View {
                 network.getNasaSearch(query: query)
             }.padding()
             
-            NasaSearchCardView().environmentObject(network)
+            NavigationStack {
+                NasaSearchCardView().environmentObject(network)
+            }
         }
     }
 }
@@ -30,30 +32,51 @@ struct NasaSearchCardView: View {
     
     var body: some View {
         GeometryReader { proxy in
-            TabView {
-                ForEach(network.searchResult.collection.items, id: \.id) { res in
-                    VStack(alignment: .center) {
-                        Text(res.data[0].title).font(.title)
-                        YoutubeVideoView(url: res.links[0].href)
-                        Text(res.data[0].description)
-                    }
-                    .frame(width: 300, height: 600)
-                    .padding(.horizontal, 24)
-                    .padding(.top, 10)
-                    .background(
-                        RoundedRectangle(cornerRadius: 30, style: .continuous).fill(
-                            .white
-                        ).shadow(radius: 10)
-                    )
-                    .padding(.horizontal, 24)
-                }.rotationEffect(.degrees(-90))
-                    .frame(width: proxy.size.width, height: proxy.size.height)
-                
-            }.rotationEffect(.degrees(90), anchor: .topLeading)
-                .frame(width: proxy.size.height, height: proxy.size.width)
-                .offset(x: proxy.size.width)
+            NavigationStack {
+                TabView {
+                    ForEach(network.searchResult.collection.items, id: \.id) { res in
+                        NavigationLink(destination: NasaSearchCardDetailView(detail: res)) {
+                            VStack(alignment: .center) {
+                                Text(res.data[0].title).font(.title)
+                                    .foregroundStyle(.black)
+                                    .multilineTextAlignment(.center)
+                                YoutubeVideoView(url: res.links[0].href)
+                            }
+                            .frame(width: 300)
+                            .padding(.horizontal, 24)
+                            .padding(.top, 10)
+                            .background(
+                                RoundedRectangle(cornerRadius: 30, style: .continuous).fill(
+                                    .white
+                                ).shadow(radius: 10)
+                            )
+                            .padding(.horizontal, 24)
+                        }
+                        
+                    }.rotationEffect(.degrees(-90))
+                        .frame(width: proxy.size.width)
+                    
+                }.rotationEffect(.degrees(90), anchor: .topLeading)
+            }
+            .frame(width: proxy.size.height, height: proxy.size.width)
+            .offset(x: proxy.size.width)
         }.tabViewStyle(
             PageTabViewStyle(indexDisplayMode: .never)
         )
+    }
+}
+
+struct NasaSearchCardDetailView: View {
+    var detail: NasaSearch.Collection.Item
+    
+    var body: some View {
+        VStack {
+            Text(detail.data[0].title)
+                .font(.title)
+                .multilineTextAlignment(.center)
+            AsyncImage(url: URL(string: detail.links[0].href), scale: 2)
+            Text(detail.data[0].description).padding()
+            Spacer()
+        }.padding(.top, 30)
     }
 }
